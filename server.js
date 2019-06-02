@@ -37,6 +37,13 @@ app.get('/',(req,res)=>{
     });
 });
 
+app.get('/project',(req,res)=>{
+    res.render('project.hbs', {
+        pageTitle: 'Portfolio',
+        welcomeMessage:"It is my portfolio page",
+        projectList:'Car Rental System'
+    });
+});
 
 app.get('/about',(req,res)=>{
     res.render('about.hbs',{
