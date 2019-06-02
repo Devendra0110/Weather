@@ -1,21 +1,9 @@
 const express = require('express');
 const yargs = require('yargs');
-const hbs = require('hbs');
+const hbs = require('hbs');         //view engine for express app
 const fs = require('fs');
 
-let argv = yargs.options({
-    p:{
-        describe:'port no',
-        demand:true,
-        number:true,
-        alias:'port'
-    }
-    }
-    ).help()
-    .alias('h','help')
-    .argv;
 
-var port = argv.port;           //getting from args
 
 let app = express();  //Creates an Express application
 
@@ -71,4 +59,4 @@ app.get('/bad',(req,res)=>{
         errorMessage:'Page not found error 404'});
 });
 
-app.listen(port,()=> console.log(`Server is running at ${port}`));                       //port number
+app.listen(3000,()=> console.log(`Server is running at 3000`));         //start server
